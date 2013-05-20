@@ -51,10 +51,10 @@ namespace gr {
        * \param seed   Initial setting for values in shift register.
        */
       static sptr make(int degree, bool repeat=true,
-		       int mask=0, int seed=1);
+		       uint32_t mask=0, uint32_t seed=1);
 
       virtual unsigned int period() const = 0;
-      virtual int mask() const = 0;
+      virtual uint32_t mask() const = 0;
     };
 
   } /* namespace digital */

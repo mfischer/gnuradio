@@ -32,14 +32,14 @@ namespace gr {
   namespace digital {
 
     glfsr_source_b::sptr
-    glfsr_source_b::make(int degree, bool repeat, int mask, int seed)
+    glfsr_source_b::make(int degree, bool repeat, uint32_t mask, uint32_t seed)
     {
       return gnuradio::get_initial_sptr
 	(new glfsr_source_b_impl(degree, repeat, mask, seed));
     }
 
     glfsr_source_b_impl::glfsr_source_b_impl(int degree, bool repeat,
-					     int mask, int seed)
+					     uint32_t mask, uint32_t seed)
       : sync_block("glfsr_source_b",
 		      io_signature::make(0, 0, 0),
 		      io_signature::make(1, 1, sizeof(unsigned char))),
@@ -59,7 +59,7 @@ namespace gr {
       delete d_glfsr;
     }
 
-    int
+    uint32_t
     glfsr_source_b_impl::mask() const
     {
       return d_glfsr->mask();

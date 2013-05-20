@@ -40,7 +40,7 @@ namespace gr {
 
     public:
       glfsr_source_f_impl(int degree, bool repeat=true,
-			 int mask=0, int seed=1);
+			 uint32_t mask=0, uint32_t seed=1);
       ~glfsr_source_f_impl();
 
       int work(int noutput_items,
@@ -48,7 +48,7 @@ namespace gr {
 	       gr_vector_void_star &output_items);
 
       unsigned int period() const { return d_length; }
-      int mask() const;
+      uint32_t mask() const;
     };
 
   } /* namespace digital */
