@@ -54,7 +54,7 @@ namespace gr {
        *               register to feed back.
        * \param seed   Initial setting for values in shift register.
        */
-      static sptr make(int degree, int mask=0, int seed=1);
+      static sptr make(int degree, uint32_t mask=0, uint32_t seed=1);
     };
 
   } /* namespace digital */

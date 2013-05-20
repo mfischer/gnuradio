@@ -37,7 +37,7 @@ namespace gr {
       glfsr *d_reference;
 
     public:
-      pn_correlator_cc_impl(int degree, int mask=0, int seed=1);
+      pn_correlator_cc_impl(int degree, uint32_t mask=0, uint32_t seed=1);
       ~pn_correlator_cc_impl();
       
       int work(int noutput_items,

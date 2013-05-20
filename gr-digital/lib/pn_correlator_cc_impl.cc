@@ -31,15 +31,15 @@ namespace gr {
   namespace digital {
 
     pn_correlator_cc::sptr
-    pn_correlator_cc::make(int degree, int mask, int seed)
+    pn_correlator_cc::make(int degree, uint32_t mask, uint32_t seed)
     {
       return gnuradio::get_initial_sptr
 	(new pn_correlator_cc_impl(degree, mask, seed));
     }
 
     pn_correlator_cc_impl::pn_correlator_cc_impl(int degree,
-						 int mask,
-						 int seed)
+						 uint32_t mask,
+						 uint32_t seed)
       : sync_decimator("pn_correlator_cc",
 			  io_signature::make(1, 1, sizeof(gr_complex)),
 			  io_signature::make(1, 1, sizeof(gr_complex)),
