@@ -21,12 +21,13 @@
  */
 
 #include <gnuradio/digital/glfsr.h>
+#include <stdint.h>
 #include <stdexcept>
 
 namespace gr {
   namespace digital {
 
-    static int s_polynomial_masks[] = {
+    static uint32_t s_polynomial_masks[] = {
       0x00000000,
       0x00000001,		// x^1 + 1
       0x00000003,               // x^2 + x^1 + 1
@@ -66,7 +67,7 @@ namespace gr {
     {
     }
 
-    int glfsr::glfsr_mask(int degree)
+    uint32_t glfsr::glfsr_mask(int degree)
     {
       if(degree < 1 || degree > 32)
 	throw std::runtime_error("glfsr::glfsr_mask(): degree must be between 1 and 32 inclusive");

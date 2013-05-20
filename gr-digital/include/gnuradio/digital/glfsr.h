@@ -24,6 +24,7 @@
 #define INCLUDED_DIGITAL_GLFSR_H
 
 #include <gnuradio/digital/api.h>
+#include <stdint.h>
 
 namespace gr {
   namespace digital {
@@ -38,14 +39,14 @@ namespace gr {
     class DIGITAL_API glfsr
     {
     private:
-      int d_shift_register;
-      int d_mask;
+      uint32_t d_shift_register;
+      uint32_t d_mask;
 
     public:
-      glfsr(int mask, int seed) { d_shift_register = seed; d_mask = mask; }
+      glfsr(uint32_t mask, uint32_t seed) { d_shift_register = seed; d_mask = mask; }
       ~glfsr();
 
-      static int glfsr_mask(int degree);
+      static uint32_t glfsr_mask(int degree);
 
       unsigned char next_bit()
       {
@@ -56,7 +57,7 @@ namespace gr {
 	return bit;
       }
 
-      int mask() const { return d_mask; }
+      uint32_t mask() const { return d_mask; }
     };
 
   } /* namespace digital */
